@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="走路节拍器"
+            android:textSize="40dp"
+            android:layout_margin="25dp"
+            android:fontFamily="@font/black_light"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/startArea"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            android:layout_marginHorizontal="10dp"
+            app:cardBackgroundColor="#FFA500"
+            app:cardUseCompatPadding="true"
+            android:translationY="-50dp"
+            android:transitionName="orangeArea"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:elevation="9dp">
+
+            <View
+                android:id="@+id/topSpace"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <View
+
+                android:layout_width="wrap_content"
+                android:layout_height="175dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textSize="60sp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:translationX="-100dp"
+                    android:alpha="0"
+                    android:transitionName="timer"/>
+
+                <ImageView
+                    android:id="@+id/gifImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/frame_00_delay_0_04s" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/stepCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="100"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:alpha="0"
+                android:transitionName="stepCounter"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <LinearLayout
+                android:id="@+id/btnContainer"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:alpha="0">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/pauseBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="❚❚" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"/>
+
+                <Button
+                    android:id="@+id/stopBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="⏹"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/settingBar"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="9dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardUseCompatPadding="true"
+        android:transitionName="settingArea">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <com.lucas.metronome_android.MyViews.Selecter
+                    android:id="@+id/setTextLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:clickable="false"/>
+
+                <com.lucas.metronome_android.MyViews.Selecter
+                    android:id="@+id/setTextRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:clickable="false"
+                    android:focusableInTouchMode="false"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/grayBar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/gray_rectangle"
+                android:layout_gravity="center"
+                android:alpha="0"
+                android:layout_marginHorizontal="30dp" />
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/settingTrigger"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:elevation="10dp"/>
+
+</FrameLayout>

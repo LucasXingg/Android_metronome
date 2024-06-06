@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/settingBar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="9dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardUseCompatPadding="true"
+        android:transitionName="settingArea">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <com.lucas.metronome_android.MyViews.Selecter
+                        android:id="@+id/setTextLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5"
+                        android:clickable="false"/>
+
+                    <com.lucas.metronome_android.MyViews.Selecter
+                        android:id="@+id/setTextRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5"
+                        android:clickable="false"
+                        android:focusableInTouchMode="false"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/grayBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:src="@drawable/gray_rectangle"
+                    android:layout_gravity="center"
+                    android:alpha="0"
+                    android:layout_marginHorizontal="30dp" />
+
+                <LinearLayout
+                    android:id="@+id/btnLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp"
+                    android:orientation="vertical"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginBottom="170dp"
+
+                    android:alpha="0">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="音色1"/>
+
+                    <Button
+                        android:id="@+id/confirmBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="确定"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
